@@ -2,3 +2,4 @@
 str = "Holberton School"
 print(str, str, str, sep='')
 print(str[:10])
+
