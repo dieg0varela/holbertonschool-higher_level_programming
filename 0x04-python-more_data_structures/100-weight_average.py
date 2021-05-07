@@ -2,6 +2,8 @@
 def weight_average(my_list=[]):
     div = 0
     res = 0
+    if my_list is None:
+        return (0)
     for i in my_list:
         res += (i[0] * i[1])
         div += i[1]
