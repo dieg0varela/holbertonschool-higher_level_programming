@@ -33,8 +33,8 @@ class Rectangle:
 
     def __repr__(self):
         """Repr Method"""
-        text = "Rectangle(" + str(self.width) + ","
-        text += "" + str(self.height) + ")"
+        text = "Rectangle(" + str(self.__width) + ","
+        text += "" + str(self.__height) + ")"
         return (text)
 
     def area(self):
