@@ -33,9 +33,7 @@ class Rectangle:
 
     def __repr__(self):
         """Repr Method"""
-        text = "Rectangle(" + str(self.__width) + ","
-        text += "" + str(self.__height) + ")"
-        return (text)
+        return ("Rectangle({}, {})".format(self.width, self.height))
 
     def area(self):
         """Area Calcuation"""
