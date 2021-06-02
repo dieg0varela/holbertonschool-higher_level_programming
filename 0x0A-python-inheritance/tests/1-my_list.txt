@@ -26,3 +26,12 @@
 >>> my_list3.append(16)
 >>> my_list3.print_sorted()
 [2, 5, 9, 16]
+
+#negative numbers
+>>> my_list3 = MyList()
+>>> my_list3.append(-5)
+>>> my_list3.append(-9)
+>>> my_list3.append(-2)
+>>> my_list3.append(-16)
+>>> my_list3.print_sorted()
+[-16, -9, -5, -2]

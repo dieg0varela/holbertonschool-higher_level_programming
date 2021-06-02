@@ -11,6 +11,26 @@ Traceback (most recent call last):
         ...
 TypeError: mmm must be an integer
 
+>>> bg.integer_validator("ttt", {"hola": "esoo"})
+Traceback (most recent call last):
+        ...
+TypeError: ttt must be an integer
+
+>>> bg.integer_validator("mi", 7.342)
+Traceback (most recent call last):
+        ...
+TypeError: mi must be an integer
+
+>>> bg.integer_validator("le", False)
+Traceback (most recent call last):
+        ...
+TypeError: le must be an integer
+
+>>> bg.integer_validator("ro", "c")
+Traceback (most recent call last):
+        ...
+TypeError: ro must be an integer
+
 #ValueError
 >>> bg.integer_validator("ree", -4)
 Traceback (most recent call last):
