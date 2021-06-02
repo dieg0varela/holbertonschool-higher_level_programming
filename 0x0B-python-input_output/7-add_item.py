@@ -9,11 +9,8 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 size = len(argv) - 1
 lista = []
 try:
-    print("22")
     lista = load_from_json_file("add_item.json")
-    print(lista)
 except:
-    print("33")
     lista = []
 for i in range(size):
     lista.append(argv[i + 1])
