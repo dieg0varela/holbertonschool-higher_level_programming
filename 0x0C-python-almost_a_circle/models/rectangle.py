@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 '''Rectangle Module'''
-
-
 from models.base import Base
+
+
 class Rectangle(Base):
     '''Rectangle Class'''
-
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Init Method'''
         super().__init__(id)
@@ -14,13 +13,48 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        '''Str Method'''
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                        self.y, self.width,
+                                                        self.height))
+
+    def update(self, *args, **kwargs):
+        '''Update Method'''
+        if args is not None:
+            cont = len(args)
+        if cont == 1:
+            self.id = args[0]
+        elif cont == 2:
+            self.id = args[0]
+            self.width = args[1]
+        elif cont == 3:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+        elif cont == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        elif cont == 5:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+
     def area(self):
         '''Area Method'''
         return (self.height * self.width)
 
     def display(self):
         '''Display Method'''
+        x_spaces = " " * self.x
+        for y_spaces in range(self.y):
+            print()
         for y in range(self.height):
+            print(x_spaces, end='')
             for x in range(self.width):
                 print("#", end='')
             print()
