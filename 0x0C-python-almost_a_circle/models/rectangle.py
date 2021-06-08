@@ -21,28 +21,30 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         '''Update Method'''
-        if args is not None:
+        if args is not None and len(args) != 0:
             cont = len(args)
-        if cont == 1:
-            self.id = args[0]
-        elif cont == 2:
-            self.id = args[0]
-            self.width = args[1]
-        elif cont == 3:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-        elif cont == 4:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-        elif cont == 5:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+            if cont >= 1:
+                self.id = args[0]
+            if cont >= 2:
+                self.width = args[1]
+            if cont >= 3:
+                self.height = args[2]
+            if cont >= 4:
+                self.x = args[3]
+            if cont >= 5:
+                self.y = args[4]
+        elif kwargs is not None:
+            for i in kwargs:
+                if i == "id":
+                    self.id = kwargs.get(i)
+                elif i == "width":
+                    self.width = kwargs.get(i)
+                elif i == "height":
+                    self.height = kwargs.get(i)
+                elif i == "x":
+                    self.x = kwargs.get(i)
+                elif i == "y":
+                    self.y = kwargs.get(i)
 
     def area(self):
         '''Area Method'''
