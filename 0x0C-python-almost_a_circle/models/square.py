@@ -43,7 +43,6 @@ class Square(Rectangle):
         res = {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
         return (res)
 
-
     @property
     def size(self):
         return self.width
