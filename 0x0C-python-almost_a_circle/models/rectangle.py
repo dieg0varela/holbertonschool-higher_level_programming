@@ -61,6 +61,12 @@ class Rectangle(Base):
                 print("#", end='')
             print()
 
+    def to_dictionary(self):
+        '''To_dictionary Method'''
+        res = {"id": self.id, "width": self.width, "height": self.height,
+               "x": self.x, "y": self.y}
+        return (res)
+
     @property
     def width(self):
         return self.__width
