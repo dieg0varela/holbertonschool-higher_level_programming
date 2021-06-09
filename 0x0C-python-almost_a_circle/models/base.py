@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Base Module'''
 import json
-
+from os.path import isfile
 
 class Base:
     '''Base Class'''
@@ -42,4 +42,27 @@ class Base:
             return (res)
         else:
             res = json.loads(json_string)
+            return (res)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        name = cls.__name__ + ".json"
+        res = []
+        if not isfile(name):
+            return (res)
+        else:
+            with open(name, "r") as f:
+                readed = f.read()
+            temp = cls.from_json_string(readed)
+            for item in temp:
+                res.append(cls.create(**item))
             return (res)
