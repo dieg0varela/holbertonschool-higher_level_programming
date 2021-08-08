@@ -15,9 +15,9 @@ if __name__ == "__main__":
 
     instance = (session.query(State).filter(text("states.name=('{}')"
                      .format(sys.argv[4]))).order_by(State.id))
+    res = instance.all()
 
-    if instance.count() != 0:
-        res = instance.all()
+    if len(res) != 0:
         print(res[0].id)
     else:
-        print("Not Found")
+        print("Not found")
