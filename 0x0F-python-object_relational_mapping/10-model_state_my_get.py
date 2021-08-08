@@ -17,6 +17,7 @@ if __name__ == "__main__":
                      .format(sys.argv[4]))).order_by(State.id))
 
     if instance.count() != 0:
-        print(str(instance.id))
+        res = instance.first()
+        print(res.id)
     else:
         print("Not Found")
