@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    instance = (session.query(State).filter(text("name=('{}')"
+    instance = (session.query(State).filter(text("states.name=('{}')"
                      .format(sys.argv[4]))).order_by(State.id))
 
     if instance.count() != 0:
