@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 '''Task 2 Module'''
-import urllib.request
 import urllib.parse
-from sys import argv
+import urllib.request
+import sys
 if __name__ == "__main__":
-    data = urllib.parse.urlencode({"email":argv[2]})
-    data = data.encode('ascii')
-    with urllib.request.urlopen(argv[1], data) as response:
+    data = urllib.parse.urlencode({"email": sys.argv[2]}).encode()
+    req = urllib.request.Request(sys.argv[1], data=data)
+    with urllib.request.urlopen(req) as response:
         html = response.read()
-        print(html.decode())
+        print(html.decode('utf-8'))
